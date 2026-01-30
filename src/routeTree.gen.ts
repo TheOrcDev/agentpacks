@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PortalIndexRouteImport } from './routes/portal/index'
+import { Route as ApiCheckoutRouteImport } from './routes/api/checkout'
 
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
@@ -28,34 +29,43 @@ const PortalIndexRoute = PortalIndexRouteImport.update({
   path: '/portal/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCheckoutRoute = ApiCheckoutRouteImport.update({
+  id: '/api/checkout',
+  path: '/api/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
+  '/api/checkout': typeof ApiCheckoutRoute
   '/portal': typeof PortalIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
+  '/api/checkout': typeof ApiCheckoutRoute
   '/portal': typeof PortalIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/login': typeof LoginRoute
+  '/api/checkout': typeof ApiCheckoutRoute
   '/portal/': typeof PortalIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login' | '/portal'
+  fullPaths: '/' | '/login' | '/api/checkout' | '/portal'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login' | '/portal'
-  id: '__root__' | '/' | '/login' | '/portal/'
+  to: '/' | '/login' | '/api/checkout' | '/portal'
+  id: '__root__' | '/' | '/login' | '/api/checkout' | '/portal/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LoginRoute: typeof LoginRoute
+  ApiCheckoutRoute: typeof ApiCheckoutRoute
   PortalIndexRoute: typeof PortalIndexRoute
 }
 
@@ -82,12 +92,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortalIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/checkout': {
+      id: '/api/checkout'
+      path: '/api/checkout'
+      fullPath: '/api/checkout'
+      preLoaderRoute: typeof ApiCheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LoginRoute: LoginRoute,
+  ApiCheckoutRoute: ApiCheckoutRoute,
   PortalIndexRoute: PortalIndexRoute,
 }
 export const routeTree = rootRouteImport

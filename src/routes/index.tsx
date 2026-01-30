@@ -11,8 +11,9 @@ import {
   Rocket,
 } from "lucide-react";
 
-// Polar checkout URL
-const POLAR_CHECKOUT_URL = "https://polar.sh/checkout?productId=3f9a4196-0e98-484b-9d1e-262a328b1bc9";
+// Polar checkout - uses local API route that redirects to Polar
+const POLAR_PRODUCT_ID = "8e9adfb5-0d6d-4b8d-bd87-9cccccd0f5bb";
+const POLAR_CHECKOUT_URL = `/api/checkout?products=${POLAR_PRODUCT_ID}`;
 
 const PACKS = [
   {
@@ -28,7 +29,7 @@ const PACKS = [
   },
   {
     name: "Dev Team Pack",
-    icon: "⚔️",
+    icon: "💻",
     description: "AI agents for developers and engineering teams",
     agents: [
       { name: "Lead", role: "Engineering Lead", emoji: "🏗️" },
