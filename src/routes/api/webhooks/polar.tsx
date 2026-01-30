@@ -1,10 +1,14 @@
-import { createAPIFileRoute } from "@tanstack/react-start/api";
-import { db, subscriptions } from "../../../db";
-import { eq } from "drizzle-orm";
 import crypto from "node:crypto";
+import { createAPIFileRoute } from "@tanstack/react-start/api";
+import { eq } from "drizzle-orm";
+import { db, subscriptions } from "../../../db";
 
 // Verify Polar webhook signature
-function verifySignature(payload: string, signature: string, secret: string): boolean {
+function verifySignature(
+  payload: string,
+  signature: string,
+  secret: string
+): boolean {
   const hmac = crypto.createHmac("sha256", secret);
   const digest = hmac.update(payload).digest("hex");
   return crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(digest));
@@ -54,7 +58,9 @@ export const APIRoute = createAPIFileRoute("/api/webhooks/polar")({
               .update(subscriptions)
               .set({
                 status: sub.status === "active" ? "active" : sub.status,
-                currentPeriodEnd: sub.current_period_end ? new Date(sub.current_period_end) : null,
+                currentPeriodEnd: sub.current_period_end
+                  ? new Date(sub.current_period_end)
+                  : null,
                 updatedAt: new Date(),
               })
               .where(eq(subscriptions.polarSubscriptionId, sub.id));
@@ -64,7 +70,9 @@ export const APIRoute = createAPIFileRoute("/api/webhooks/polar")({
               polarCustomerId: sub.customer?.id || sub.user?.id,
               polarSubscriptionId: sub.id,
               status: sub.status === "active" ? "active" : sub.status,
-              currentPeriodEnd: sub.current_period_end ? new Date(sub.current_period_end) : null,
+              currentPeriodEnd: sub.current_period_end
+                ? new Date(sub.current_period_end)
+                : null,
             });
           }
           break;

@@ -11,7 +11,8 @@ const PACKS = [
   {
     slug: "content-creator",
     name: "Content Creator Pack",
-    description: "AI agents for content creators - planner, writer, and social manager",
+    description:
+      "AI agents for content creators - planner, writer, and social manager",
     icon: "🎬",
     filePath: "./packs-source/downloads/content-creator.zip",
     version: "1.0.0",
@@ -19,7 +20,8 @@ const PACKS = [
   {
     slug: "dev-team",
     name: "Dev Team Pack",
-    description: "AI agents for developers - engineering lead, code reviewer, and docs writer",
+    description:
+      "AI agents for developers - engineering lead, code reviewer, and docs writer",
     icon: "⚔️",
     filePath: "./packs-source/downloads/dev-team.zip",
     version: "1.0.0",
@@ -27,7 +29,8 @@ const PACKS = [
   {
     slug: "solopreneur",
     name: "Solopreneur Pack",
-    description: "AI agents for indie hackers - assistant, researcher, and outreach specialist",
+    description:
+      "AI agents for indie hackers - assistant, researcher, and outreach specialist",
     icon: "🚀",
     filePath: "./packs-source/downloads/solopreneur.zip",
     version: "1.0.0",

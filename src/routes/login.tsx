@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { ArrowLeft, CheckCircle, Loader2, Mail } from "lucide-react";
 import { useState } from "react";
 import { authClient } from "../lib/auth-client";
-import { Mail, Loader2, CheckCircle, ArrowLeft } from "lucide-react";
 
 export const Route = createFileRoute("/login")({
   component: LoginPage,
@@ -39,16 +39,17 @@ function LoginPage() {
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/10">
             <CheckCircle className="h-8 w-8 text-green-500" />
           </div>
-          <h1 className="mb-2 text-2xl font-bold">Check your email</h1>
+          <h1 className="mb-2 font-bold text-2xl">Check your email</h1>
           <p className="mb-6 text-zinc-400">
             We sent a magic link to <span className="text-white">{email}</span>
           </p>
           <p className="text-sm text-zinc-500">
-            Click the link in the email to sign in. The link expires in 10 minutes.
+            Click the link in the email to sign in. The link expires in 10
+            minutes.
           </p>
           <button
+            className="mt-6 text-purple-400 text-sm hover:text-purple-300"
             onClick={() => setSent(false)}
-            className="mt-6 text-sm text-purple-400 hover:text-purple-300"
           >
             Use a different email
           </button>
@@ -61,8 +62,8 @@ function LoginPage() {
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="w-full max-w-md">
         <button
-          onClick={() => navigate({ to: "/" })}
           className="mb-8 flex items-center gap-2 text-sm text-zinc-400 hover:text-white"
+          onClick={() => navigate({ to: "/" })}
         >
           <ArrowLeft className="h-4 w-4" />
           Back to home
@@ -73,36 +74,34 @@ function LoginPage() {
             <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-purple-500/10">
               <Mail className="h-6 w-6 text-purple-400" />
             </div>
-            <h1 className="text-2xl font-bold">Sign in to AgentPacks</h1>
+            <h1 className="font-bold text-2xl">Sign in to AgentPacks</h1>
             <p className="mt-2 text-sm text-zinc-400">
               Enter your email to receive a magic link
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="email" className="mb-2 block text-sm font-medium">
+              <label className="mb-2 block font-medium text-sm" htmlFor="email">
                 Email address
               </label>
               <input
+                className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
                 id="email"
-                type="email"
-                value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
                 required
-                className="w-full rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-purple-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
+                type="email"
+                value={email}
               />
             </div>
 
-            {error && (
-              <p className="text-sm text-red-400">{error}</p>
-            )}
+            {error && <p className="text-red-400 text-sm">{error}</p>}
 
             <button
-              type="submit"
-              disabled={loading || !email}
               className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 py-3 font-semibold text-white transition-all hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+              disabled={loading || !email}
+              type="submit"
             >
               {loading ? (
                 <>
@@ -117,7 +116,10 @@ function LoginPage() {
 
           <p className="mt-6 text-center text-sm text-zinc-500">
             Only subscribers can access the portal.{" "}
-            <a href="/#pricing" className="text-purple-400 hover:text-purple-300">
+            <a
+              className="text-purple-400 hover:text-purple-300"
+              href="/#pricing"
+            >
               Subscribe here
             </a>
           </p>

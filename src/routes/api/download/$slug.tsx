@@ -1,9 +1,9 @@
-import { createAPIFileRoute } from "@tanstack/react-start/api";
-import { auth } from "../../../lib/auth";
-import { db, subscriptions, agentPacks } from "../../../db";
-import { eq } from "drizzle-orm";
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { createAPIFileRoute } from "@tanstack/react-start/api";
+import { eq } from "drizzle-orm";
+import { agentPacks, db, subscriptions } from "../../../db";
+import { auth } from "../../../lib/auth";
 
 export const APIRoute = createAPIFileRoute("/api/download/$slug")({
   GET: async ({ request, params }) => {

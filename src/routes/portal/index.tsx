@@ -1,30 +1,34 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
-import { auth } from "../../lib/auth";
-import { db, subscriptions, agentPacks } from "../../db";
 import { eq } from "drizzle-orm";
-import { Download, Calendar, LogOut, AlertCircle, Package } from "lucide-react";
+import { AlertCircle, Calendar, Download, LogOut, Package } from "lucide-react";
+import { agentPacks, db, subscriptions } from "../../db";
+import { auth } from "../../lib/auth";
 import { authClient } from "../../lib/auth-client";
 
 // Server function to get session
-const getSession = createServerFn({ method: "GET" }).handler(async ({ request }) => {
-  const session = await auth.api.getSession({ headers: request.headers });
-  return session;
-});
+const getSession = createServerFn({ method: "GET" }).handler(
+  async ({ request }) => {
+    const session = await auth.api.getSession({ headers: request.headers });
+    return session;
+  }
+);
 
 // Server function to get subscription status
-const getSubscription = createServerFn({ method: "GET" }).handler(async ({ request }) => {
-  const session = await auth.api.getSession({ headers: request.headers });
-  if (!session?.user?.email) return null;
+const getSubscription = createServerFn({ method: "GET" }).handler(
+  async ({ request }) => {
+    const session = await auth.api.getSession({ headers: request.headers });
+    if (!session?.user?.email) return null;
 
-  const [subscription] = await db
-    .select()
-    .from(subscriptions)
-    .where(eq(subscriptions.email, session.user.email))
-    .limit(1);
+    const [subscription] = await db
+      .select()
+      .from(subscriptions)
+      .where(eq(subscriptions.email, session.user.email))
+      .limit(1);
 
-  return subscription;
-});
+    return subscription;
+  }
+);
 
 // Server function to get all packs
 const getPacks = createServerFn({ method: "GET" }).handler(async () => {
@@ -67,12 +71,12 @@ function PortalPage() {
         {/* Header */}
         <div className="mb-8 flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold">Your Agent Packs</h1>
+            <h1 className="font-bold text-2xl">Your Agent Packs</h1>
             <p className="text-zinc-400">{session.user.email}</p>
           </div>
           <button
-            onClick={handleSignOut}
             className="flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800 px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-700"
+            onClick={handleSignOut}
           >
             <LogOut className="h-4 w-4" />
             Sign Out
@@ -84,10 +88,12 @@ function PortalPage() {
           <div className="mb-8 flex items-start gap-3 rounded-xl border border-yellow-500/30 bg-yellow-500/10 p-4">
             <AlertCircle className="mt-0.5 h-5 w-5 text-yellow-500" />
             <div>
-              <p className="font-medium text-yellow-500">No active subscription</p>
+              <p className="font-medium text-yellow-500">
+                No active subscription
+              </p>
               <p className="text-sm text-yellow-500/80">
                 Subscribe to download all agent packs.{" "}
-                <a href="/#pricing" className="underline hover:no-underline">
+                <a className="underline hover:no-underline" href="/#pricing">
                   Subscribe now
                 </a>
               </p>
@@ -106,8 +112,8 @@ function PortalPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             {packs.map((pack) => (
               <div
-                key={pack.id}
                 className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6 transition-all hover:border-zinc-700"
+                key={pack.id}
               >
                 <div className="mb-4 flex items-start justify-between">
                   <div className="text-4xl">{pack.icon || "📦"}</div>
@@ -116,7 +122,7 @@ function PortalPage() {
                   </span>
                 </div>
 
-                <h3 className="mb-1 text-lg font-semibold">{pack.name}</h3>
+                <h3 className="mb-1 font-semibold text-lg">{pack.name}</h3>
                 <p className="mb-4 text-sm text-zinc-400">{pack.description}</p>
 
                 <div className="mb-4 flex items-center gap-2 text-xs text-zinc-500">
@@ -126,16 +132,16 @@ function PortalPage() {
 
                 {isActive ? (
                   <a
+                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 py-2 font-semibold text-sm text-white transition-all hover:opacity-90"
                     href={`/api/download/${pack.slug}`}
-                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 py-2 text-sm font-semibold text-white transition-all hover:opacity-90"
                   >
                     <Download className="h-4 w-4" />
                     Download
                   </a>
                 ) : (
                   <button
+                    className="flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-lg bg-zinc-800 py-2 font-semibold text-sm text-zinc-500"
                     disabled
-                    className="flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-lg bg-zinc-800 py-2 text-sm font-semibold text-zinc-500"
                   >
                     <Download className="h-4 w-4" />
                     Subscribe to Download
@@ -150,7 +156,10 @@ function PortalPage() {
         <div className="mt-12 text-center text-sm text-zinc-500">
           <p>
             Need help?{" "}
-            <a href="mailto:support@agentpacks.dev" className="text-purple-400 hover:text-purple-300">
+            <a
+              className="text-purple-400 hover:text-purple-300"
+              href="mailto:support@agentpacks.dev"
+            >
               Contact support
             </a>
           </p>
