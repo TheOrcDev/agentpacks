@@ -1,0 +1,41 @@
+{
+  "$schema": "https://clawdbot.com/schema/config.json",
+  "agents": [
+    {
+      "id": "pixel",
+      "name": "Pixel",
+      "description": "Content Planner & Strategist",
+      "workspace": "./agents/pixel",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "channels": ["content-planning"],
+      "triggers": {
+        "mention": true,
+        "dm": true
+      }
+    },
+    {
+      "id": "script",
+      "name": "Script",
+      "description": "Script Writer & Wordsmith",
+      "workspace": "./agents/script",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "channels": ["scripts"],
+      "triggers": {
+        "mention": true,
+        "dm": true
+      }
+    },
+    {
+      "id": "buzz",
+      "name": "Buzz",
+      "description": "Social Manager & Amplifier",
+      "workspace": "./agents/buzz",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "channels": ["social"],
+      "triggers": {
+        "mention": true,
+        "dm": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://clawdbot.com/schema/config.json",
+  "agents": [
+    {
+      "id": "lead",
+      "name": "Lead",
+      "description": "Engineering Lead & System Architect",
+      "workspace": "./agents/lead",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "channels": ["engineering"],
+      "triggers": {
+        "mention": true,
+        "dm": true
+      }
+    },
+    {
+      "id": "reviewer",
+      "name": "Reviewer",
+      "description": "Code Reviewer & Quality Guardian",
+      "workspace": "./agents/reviewer",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "channels": ["code-review"],
+      "triggers": {
+        "mention": true,
+        "dm": true
+      }
+    },
+    {
+      "id": "docs",
+      "name": "Docs",
+      "description": "Technical Writer & Documentation Specialist",
+      "workspace": "./agents/docs",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "channels": ["documentation"],
+      "triggers": {
+        "mention": true,
+        "dm": true
+      }
+    }
+  ]
+}

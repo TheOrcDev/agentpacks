@@ -1,0 +1,17 @@
+{
+  "$schema": "https://clawdbot.com/schema/config.json",
+  "agents": [
+    {
+      "id": "helper",
+      "name": "Helper",
+      "description": "General-Purpose Assistant",
+      "workspace": "./agents/helper",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "channels": ["general"],
+      "triggers": {
+        "mention": true,
+        "dm": true
+      }
+    }
+  ]
+}

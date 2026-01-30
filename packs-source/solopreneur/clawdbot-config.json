@@ -1,0 +1,41 @@
+{
+  "$schema": "https://clawdbot.com/schema/config.json",
+  "agents": [
+    {
+      "id": "chief",
+      "name": "Chief",
+      "description": "Personal Assistant & Productivity Partner",
+      "workspace": "./agents/assistant",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "channels": ["assistant"],
+      "triggers": {
+        "mention": true,
+        "dm": true
+      }
+    },
+    {
+      "id": "scout",
+      "name": "Scout",
+      "description": "Research Agent & Market Analyst",
+      "workspace": "./agents/research",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "channels": ["research"],
+      "triggers": {
+        "mention": true,
+        "dm": true
+      }
+    },
+    {
+      "id": "reach",
+      "name": "Reach",
+      "description": "Outreach Agent & Relationship Builder",
+      "workspace": "./agents/outreach",
+      "model": "anthropic/claude-sonnet-4-20250514",
+      "channels": ["outreach"],
+      "triggers": {
+        "mention": true,
+        "dm": true
+      }
+    }
+  ]
+}
