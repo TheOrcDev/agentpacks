@@ -18,7 +18,7 @@ const PACKS = [
   {
     name: "Content Creator Pack",
     icon: "🎬",
-    description: "AI agents for YouTubers, streamers, and content creators",
+    description: "AI agents for content creators",
     agents: [
       { name: "Pixel", role: "Content Planner", emoji: "🎯" },
       { name: "Script", role: "Script Writer", emoji: "✍️" },
