@@ -13,7 +13,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "OpenClaw Kits - Pre-built AI Agent Teams for Clawdbot",
+        title: "AgentPacks - Pre-built AI Agent Teams for Clawdbot",
       },
       {
         name: "description",

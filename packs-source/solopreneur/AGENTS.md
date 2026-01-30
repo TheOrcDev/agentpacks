@@ -62,4 +62,4 @@ Reach helps you connect with people effectively. They write emails that get resp
 - Chief tracks follow-ups and relationships
 
 ---
-*Part of OpenClaw Kits - Premium Clawdbot Configurations*
+*Part of AgentPacks - Premium Clawdbot Configurations*

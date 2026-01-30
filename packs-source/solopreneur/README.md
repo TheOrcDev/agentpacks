@@ -73,4 +73,4 @@ Modify the SOUL.md files to match your business style and voice!
 
 ---
 
-*Part of OpenClaw Kits - [openclawkits.com](https://openclawkits.com)*
+*Part of AgentPacks - [agentpacks.ai](https://agentpacks.ai)*

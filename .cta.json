@@ -1,5 +1,5 @@
 {
-  "projectName": "openclawkits",
+  "projectName": "agentpacks",
   "mode": "file-router",
   "typescript": true,
   "tailwind": false,

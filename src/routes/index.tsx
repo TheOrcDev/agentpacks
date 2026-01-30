@@ -224,7 +224,7 @@ function Home() {
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
             <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6 text-center">
               <h2 className="text-2xl font-bold text-white">
-                OpenClaw Kits Pro
+                AgentPacks Pro
               </h2>
               <p className="text-purple-100">All packs, all updates</p>
             </div>

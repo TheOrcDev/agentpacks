@@ -59,4 +59,4 @@ Buzz handles your social presence across platforms. Repurposes content, writes p
 - Have Buzz schedule engagement checks
 
 ---
-*Part of OpenClaw Kits - Premium Clawdbot Configurations*
+*Part of AgentPacks - Premium Clawdbot Configurations*

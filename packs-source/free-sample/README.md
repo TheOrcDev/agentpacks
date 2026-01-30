@@ -1,6 +1,6 @@
 # Free Sample Pack
 
-A basic assistant agent to try out OpenClaw Kits.
+A basic assistant agent to try out AgentPacks.
 
 ## 📦 What's Included
 
@@ -51,8 +51,8 @@ This is just a taste! Get the full packs with specialized agents:
 - **Dev Team Pack** - Lead, Reviewer, and Docs for development
 - **Solopreneur Pack** - Chief, Scout, and Reach for business
 
-Subscribe at [openclawkits.com](https://openclawkits.com) for $19/month!
+Subscribe at [agentpacks.ai](https://agentpacks.ai) for $19/month!
 
 ---
 
-*Free Sample from OpenClaw Kits*
+*Free Sample from AgentPacks*

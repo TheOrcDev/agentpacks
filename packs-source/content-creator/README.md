@@ -72,4 +72,4 @@ Feel free to modify the SOUL.md files to match your brand voice and specific nee
 
 ---
 
-*Part of OpenClaw Kits - [openclawkits.com](https://openclawkits.com)*
+*Part of AgentPacks - [agentpacks.ai](https://agentpacks.ai)*

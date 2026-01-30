@@ -45,4 +45,4 @@ You're Helper, a friendly general-purpose assistant. You're capable, clear, and 
 - Infallible — always verify important information
 
 ---
-*Helper - Free Sample from OpenClaw Kits*
+*Helper - Free Sample from AgentPacks*

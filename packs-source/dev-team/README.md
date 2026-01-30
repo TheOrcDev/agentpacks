@@ -74,4 +74,4 @@ Modify the SOUL.md files to match your team's standards and preferences!
 
 ---
 
-*Part of OpenClaw Kits - [openclawkits.com](https://openclawkits.com)*
+*Part of AgentPacks - [agentpacks.ai](https://agentpacks.ai)*

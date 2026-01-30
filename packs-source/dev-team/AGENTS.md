@@ -62,4 +62,4 @@ Docs turns your code into understandable documentation. They write READMEs, API 
 - Check with Lead before big refactors
 
 ---
-*Part of OpenClaw Kits - Premium Clawdbot Configurations*
+*Part of AgentPacks - Premium Clawdbot Configurations*

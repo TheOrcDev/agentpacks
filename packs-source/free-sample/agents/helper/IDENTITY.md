@@ -13,4 +13,4 @@
 - General problem-solving
 
 ## Note
-This is a free sample! For specialized agents, check out the full packs at openclawkits.com.
+This is a free sample! For specialized agents, check out the full packs at agentpacks.ai.
