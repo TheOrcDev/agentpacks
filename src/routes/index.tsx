@@ -11,8 +11,8 @@ import {
   Rocket,
 } from "lucide-react";
 
-// Polar checkout URL - replace with your actual product checkout URL
-const POLAR_CHECKOUT_URL = "https://polar.sh/checkout/..."; // TODO: Add your Polar checkout URL
+// Polar checkout URL
+const POLAR_CHECKOUT_URL = "https://polar.sh/checkout?productId=3f9a4196-0e98-484b-9d1e-262a328b1bc9";
 
 const PACKS = [
   {
