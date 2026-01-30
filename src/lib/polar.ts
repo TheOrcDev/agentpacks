@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { Polar } from "@polar-sh/sdk";
 
 if (!process.env.POLAR_ACCESS_TOKEN) {
