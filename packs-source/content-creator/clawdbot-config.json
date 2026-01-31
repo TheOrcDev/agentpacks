@@ -2,40 +2,31 @@
   "$schema": "https://clawdbot.com/schema/config.json",
   "agents": [
     {
-      "id": "pixel",
-      "name": "Pixel",
-      "description": "Content Planner & Strategist",
-      "workspace": "./agents/pixel",
+      "id": "mia",
+      "name": "Mia",
+      "description": "Content Strategist",
+      "workspace": "./agents/mia",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["content-planning"],
-      "triggers": {
-        "mention": true,
-        "dm": true
-      }
+      "triggers": { "mention": true, "dm": true }
     },
     {
-      "id": "script",
-      "name": "Script",
-      "description": "Script Writer & Wordsmith",
-      "workspace": "./agents/script",
+      "id": "blake",
+      "name": "Blake",
+      "description": "Script Writer",
+      "workspace": "./agents/blake",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["scripts"],
-      "triggers": {
-        "mention": true,
-        "dm": true
-      }
+      "triggers": { "mention": true, "dm": true }
     },
     {
-      "id": "buzz",
-      "name": "Buzz",
-      "description": "Social Manager & Amplifier",
-      "workspace": "./agents/buzz",
+      "id": "jordan",
+      "name": "Jordan",
+      "description": "Social Manager",
+      "workspace": "./agents/jordan",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["social"],
-      "triggers": {
-        "mention": true,
-        "dm": true
-      }
+      "triggers": { "mention": true, "dm": true }
     }
   ]
 }

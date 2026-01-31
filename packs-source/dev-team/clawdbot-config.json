@@ -2,40 +2,31 @@
   "$schema": "https://clawdbot.com/schema/config.json",
   "agents": [
     {
-      "id": "lead",
-      "name": "Lead",
-      "description": "Engineering Lead & System Architect",
-      "workspace": "./agents/lead",
+      "id": "marcus",
+      "name": "Marcus",
+      "description": "Tech Lead",
+      "workspace": "./agents/marcus",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["engineering"],
-      "triggers": {
-        "mention": true,
-        "dm": true
-      }
+      "triggers": { "mention": true, "dm": true }
     },
     {
-      "id": "reviewer",
-      "name": "Reviewer",
-      "description": "Code Reviewer & Quality Guardian",
-      "workspace": "./agents/reviewer",
+      "id": "elena",
+      "name": "Elena",
+      "description": "Code Reviewer",
+      "workspace": "./agents/elena",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["code-review"],
-      "triggers": {
-        "mention": true,
-        "dm": true
-      }
+      "triggers": { "mention": true, "dm": true }
     },
     {
-      "id": "docs",
-      "name": "Docs",
-      "description": "Technical Writer & Documentation Specialist",
-      "workspace": "./agents/docs",
+      "id": "sam",
+      "name": "Sam",
+      "description": "Documentation",
+      "workspace": "./agents/sam",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["documentation"],
-      "triggers": {
-        "mention": true,
-        "dm": true
-      }
+      "triggers": { "mention": true, "dm": true }
     }
   ]
 }

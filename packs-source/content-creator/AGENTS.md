@@ -4,31 +4,31 @@ Your AI-powered content creation team. Three specialized agents working together
 
 ## 🎬 The Team
 
-### 1. Pixel - Content Planner
+### 1. Mia - Content Planner
 **Role:** Ideas, scheduling, and content strategy
 **Channel:** `#content-planning`
 
-Pixel helps you brainstorm video ideas, plan your content calendar, analyze trends, and keep your creative pipeline flowing. Ask Pixel when you need:
+Mia helps you brainstorm video ideas, plan your content calendar, analyze trends, and keep your creative pipeline flowing. Ask Mia when you need:
 - Video/content ideas for your niche
 - Content calendar planning
 - Trend analysis and what's working
 - Series and format suggestions
 
-### 2. Script - Script Writer  
+### 2. Blake - Script Writer  
 **Role:** Writing scripts, hooks, and CTAs
 **Channel:** `#scripts`
 
-Script transforms your ideas into engaging content. Specialized in YouTube-style scripting with strong hooks, clear structure, and compelling calls-to-action. Ask Script for:
+Blake transforms your ideas into engaging content. Specialized in YouTube-style scripting with strong hooks, clear structure, and compelling calls-to-action. Ask Blake for:
 - Full video scripts from outlines
 - Hook variations for intros
 - CTA suggestions
-- Script reviews and improvements
+- Blake reviews and improvements
 
-### 3. Buzz - Social Manager
+### 3. Jordan - Social Manager
 **Role:** Cross-platform promotion and engagement
 **Channel:** `#social`
 
-Buzz handles your social presence across platforms. Repurposes content, writes posts, and helps with community engagement. Ask Buzz for:
+Jordan handles your social presence across platforms. Repurposes content, writes posts, and helps with community engagement. Ask Jordan for:
 - Twitter/X threads from videos
 - LinkedIn posts
 - Community post ideas
@@ -47,18 +47,18 @@ Buzz handles your social presence across platforms. Repurposes content, writes p
 ## 💡 Workflow Tips
 
 **Weekly Planning:**
-1. Monday: Ask Pixel for the week's content ideas
-2. Have Script draft scripts for top picks
-3. After publishing, have Buzz create social posts
+1. Monday: Ask Mia for the week's content ideas
+2. Have Blake draft scripts for top picks
+3. After publishing, have Jordan create social posts
 
 **Video Production:**
-1. Share your topic with Script
+1. Share your topic with Blake
 2. Review and iterate on the script
-3. After filming, have Buzz prep promotional content
+3. After filming, have Jordan prep promotional content
 
 **Staying Consistent:**
-- Set up heartbeats for Pixel to remind you about content deadlines
-- Have Buzz schedule engagement checks
+- Set up heartbeats for Mia to remind you about content deadlines
+- Have Jordan schedule engagement checks
 
 ---
 *Part of AgentPacks - Premium Clawdbot Configurations*

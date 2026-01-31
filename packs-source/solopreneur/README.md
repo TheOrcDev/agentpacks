@@ -4,9 +4,9 @@ Your AI-powered business team for task management, research, and outreach.
 
 ## 📦 What's Included
 
-- **Chief** 📋 - Personal Assistant & Productivity Partner
-- **Scout** 🔬 - Research Agent & Market Analyst
-- **Reach** 📧 - Outreach Agent & Relationship Builder
+- **Claire** 📋 - Executive Assistant
+- **Leo** 🔬 - Research Analyst
+- **Harper** 📧 - Outreach Specialist
 
 ## 🚀 Quick Setup
 
@@ -22,21 +22,21 @@ Add the following to your `agents` array in `clawdbot.json`:
 {
   "agents": [
     {
-      "id": "chief",
-      "name": "Chief",
-      "workspace": "./agents/chief",
+      "id": "claire",
+      "name": "Claire",
+      "workspace": "./agents/claire",
       "channels": ["assistant"]
     },
     {
-      "id": "scout",
-      "name": "Scout",
-      "workspace": "./agents/scout",
+      "id": "leo",
+      "name": "Leo",
+      "workspace": "./agents/leo",
       "channels": ["research"]
     },
     {
-      "id": "reach",
-      "name": "Reach",
-      "workspace": "./agents/reach",
+      "id": "harper",
+      "name": "Harper",
+      "workspace": "./agents/harper",
       "channels": ["outreach"]
     }
   ]
@@ -54,20 +54,20 @@ Message your agents in their respective channels.
 ## 💡 Usage Examples
 
 ### Task Management
-> @Chief Here's what I need to do this week: [list]. Help me prioritize and plan my days.
+> @Claire Here's what I need to do this week: [list]. Help me prioritize and plan my days.
 
 ### Market Research
-> @Scout Research the no-code app builder market. Who are the top players, what do they charge, and where are the gaps?
+> @Leo Research the no-code app builder market. Who are the top players, what do they charge, and where are the gaps?
 
 ### Cold Outreach
-> @Reach Write a cold email to a potential podcast host. I want to be a guest and talk about indie hacking.
+> @Harper Write a cold email to a potential podcast host. I want to be a guest and talk about indie hacking.
 
 ## 🔄 Workflow
 
-1. **Plan** → Start each day with Chief
-2. **Research** → Have Scout gather intel
-3. **Reach Out** → Let Reach handle communications
-4. **Track** → Keep Chief updated on progress
+1. **Plan** → Start each day with Claire
+2. **Research** → Have Leo gather intel
+3. **Harper Out** → Let Harper handle communications
+4. **Track** → Keep Claire updated on progress
 
 ## 📝 Customization
 

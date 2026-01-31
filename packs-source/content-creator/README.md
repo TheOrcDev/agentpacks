@@ -4,9 +4,9 @@ Your AI-powered content creation team for YouTube, TikTok, and beyond.
 
 ## 📦 What's Included
 
-- **Pixel** 🎯 - Content Planner & Strategist
-- **Script** ✍️ - Script Writer & Wordsmith  
-- **Buzz** 📢 - Social Manager & Amplifier
+- **Mia** 🎯 - Content Strategist
+- **Blake** ✍️ - Script Writer  
+- **Jordan** 📱 - Social Manager
 
 ## 🚀 Quick Setup
 
@@ -22,21 +22,21 @@ Add the following to your `agents` array in `clawdbot.json`:
 {
   "agents": [
     {
-      "id": "pixel",
-      "name": "Pixel",
-      "workspace": "./agents/pixel",
+      "id": "mia",
+      "name": "Mia",
+      "workspace": "./agents/mia",
       "channels": ["content-planning"]
     },
     {
-      "id": "script", 
-      "name": "Script",
-      "workspace": "./agents/script",
+      "id": "blake",
+      "name": "Blake",
+      "workspace": "./agents/blake",
       "channels": ["scripts"]
     },
     {
-      "id": "buzz",
-      "name": "Buzz", 
-      "workspace": "./agents/buzz",
+      "id": "jordan",
+      "name": "Jordan",
+      "workspace": "./agents/jordan",
       "channels": ["social"]
     }
   ]
@@ -54,19 +54,19 @@ Message your agents in their respective channels.
 ## 💡 Usage Examples
 
 ### Planning Content
-> @Pixel I make coding tutorials. Give me 5 video ideas for beginners learning React.
+> @Mia I make coding tutorials. Give me 5 video ideas for beginners learning React.
 
 ### Writing Scripts
-> @Script Write a script for a 10-minute tutorial on React hooks. Target audience is beginners.
+> @Blake Write a script for a 10-minute tutorial on React hooks. Target audience is beginners.
 
 ### Social Promotion
-> @Buzz I just published a video about React hooks. Create a Twitter thread to promote it.
+> @Jordan I just published a video about React hooks. Create a Twitter thread to promote it.
 
 ## 🔄 Workflow
 
-1. **Plan** → Ask Pixel for content ideas
-2. **Write** → Have Script draft your video script
-3. **Promote** → Let Buzz create social content
+1. **Plan** → Ask Mia for content ideas
+2. **Write** → Have Blake draft your video script
+3. **Promote** → Let Jordan create social content
 
 ## 📝 Customization
 

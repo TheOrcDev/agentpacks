@@ -2,40 +2,31 @@
   "$schema": "https://clawdbot.com/schema/config.json",
   "agents": [
     {
-      "id": "chief",
-      "name": "Chief",
-      "description": "Personal Assistant & Productivity Partner",
-      "workspace": "./agents/chief",
+      "id": "claire",
+      "name": "Claire",
+      "description": "Executive Assistant",
+      "workspace": "./agents/claire",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["assistant"],
-      "triggers": {
-        "mention": true,
-        "dm": true
-      }
+      "triggers": { "mention": true, "dm": true }
     },
     {
-      "id": "scout",
-      "name": "Scout",
-      "description": "Research Agent & Market Analyst",
-      "workspace": "./agents/scout",
+      "id": "leo",
+      "name": "Leo",
+      "description": "Research Analyst",
+      "workspace": "./agents/leo",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["research"],
-      "triggers": {
-        "mention": true,
-        "dm": true
-      }
+      "triggers": { "mention": true, "dm": true }
     },
     {
-      "id": "reach",
-      "name": "Reach",
-      "description": "Outreach Agent & Relationship Builder",
-      "workspace": "./agents/reach",
+      "id": "harper",
+      "name": "Harper",
+      "description": "Outreach Specialist",
+      "workspace": "./agents/harper",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["outreach"],
-      "triggers": {
-        "mention": true,
-        "dm": true
-      }
+      "triggers": { "mention": true, "dm": true }
     }
   ]
 }

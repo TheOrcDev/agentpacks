@@ -49,9 +49,9 @@ Message Helper in the general channel.
 
 This is just a taste! Get the full packs with specialized agents:
 
-- **Content Creator Pack** - Pixel, Script, and Buzz for content creation
-- **Dev Team Pack** - Lead, Reviewer, and Docs for development
-- **Solopreneur Pack** - Chief, Scout, and Reach for business
+- **Content Creator Pack** - Mia, Blake, and Jordan for content creation
+- **Dev Team Pack** - Marcus, Elena, and Sam for development
+- **Solopreneur Pack** - Claire, Leo, and Harper for business
 
 Subscribe at [agentpacks.ai](https://agentpacks.ai) for $19/month!
 

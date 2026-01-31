@@ -4,9 +4,9 @@ Your AI-powered engineering team for architecture, code review, and documentatio
 
 ## 📦 What's Included
 
-- **Lead** 🏗️ - Engineering Lead & System Architect
-- **Reviewer** 🔍 - Code Reviewer & Quality Guardian
-- **Docs** 📚 - Technical Writer & Documentation Specialist
+- **Marcus** 🏗️ - Tech Lead
+- **Elena** 🔍 - Code Reviewer
+- **Sam** 📚 - Documentation
 
 ## 🚀 Quick Setup
 
@@ -22,21 +22,21 @@ Add the following to your `agents` array in `clawdbot.json`:
 {
   "agents": [
     {
-      "id": "lead",
-      "name": "Lead",
-      "workspace": "./agents/lead",
+      "id": "marcus",
+      "name": "Marcus",
+      "workspace": "./agents/marcus",
       "channels": ["engineering"]
     },
     {
-      "id": "reviewer",
-      "name": "Reviewer",
-      "workspace": "./agents/reviewer",
+      "id": "elena",
+      "name": "Elena",
+      "workspace": "./agents/elena",
       "channels": ["code-review"]
     },
     {
-      "id": "docs",
-      "name": "Docs",
-      "workspace": "./agents/docs",
+      "id": "sam",
+      "name": "Sam",
+      "workspace": "./agents/sam",
       "channels": ["documentation"]
     }
   ]
@@ -54,21 +54,21 @@ Message your agents in their respective channels.
 ## 💡 Usage Examples
 
 ### Architecture Discussion
-> @Lead I'm building a SaaS app with Next.js. Should I use a monorepo or separate repos for frontend and backend?
+> @Marcus I'm building a SaaS app with Next.js. Should I use a monorepo or separate repos for frontend and backend?
 
 ### Code Review
-> @Reviewer Review this PR: [paste code or link]
+> @Elena Review this PR: [paste code or link]
 > Looking for feedback on error handling and performance.
 
 ### Documentation
-> @Docs Generate a README for my Express API. It has user auth, posts CRUD, and file uploads.
+> @Sam Generate a README for my Express API. It has user auth, posts CRUD, and file uploads.
 
 ## 🔄 Workflow
 
-1. **Design** → Discuss architecture with Lead
+1. **Design** → Discuss architecture with Marcus
 2. **Build** → Code your feature
-3. **Review** → Get feedback from Reviewer
-4. **Document** → Have Docs update the docs
+3. **Review** → Get feedback from Elena
+4. **Document** → Have Sam update the docs
 
 ## 📝 Customization
 
