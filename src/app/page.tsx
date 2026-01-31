@@ -67,8 +67,15 @@ export default function Home() {
       {/* Header */}
       <header className="fixed top-0 right-0 left-0 z-50 border-zinc-800/50 border-b bg-zinc-950/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <Link className="font-bold text-xl" href="/">
-            Agent<span className="text-purple-400">Packs</span>
+          <Link className="flex items-center gap-3" href="/">
+            <img
+              alt="AgentPacks"
+              className="h-8 w-8"
+              src="/agent-packs-logo.png"
+            />
+            <span className="font-bold text-xl">
+              Agent<span className="text-purple-400">Packs</span>
+            </span>
           </Link>
           <Link
             className="rounded-lg border border-zinc-700 bg-zinc-800/50 px-4 py-2 font-medium text-sm text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white"
