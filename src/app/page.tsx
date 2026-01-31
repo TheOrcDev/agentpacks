@@ -96,7 +96,6 @@ export default function Home() {
         <div className="absolute inset-0 -z-10">
           {/* Color Bends (ReactBits) */}
           <div className="absolute inset-0 opacity-70">
-            {/* @ts-expect-error client component */}
             <ColorBends
               autoRotate={0}
               colors={["#a855f7", "#ec4899", "#22d3ee"]}
@@ -126,7 +125,7 @@ export default function Home() {
           <h1 className="mb-6 font-bold text-5xl tracking-tight sm:text-7xl">
             Pre-built AI Agent Teams
             <br />
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Ready to Deploy
             </span>
           </h1>
