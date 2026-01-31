@@ -8,6 +8,7 @@ export default function SiteHeader() {
         <Link className="flex items-center gap-3" href="/">
           <Image
             alt="AgentPacks"
+            className="dark:invert"
             height={32}
             priority
             src="/agent-packs-logo.png"
