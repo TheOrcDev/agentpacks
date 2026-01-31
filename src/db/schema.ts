@@ -35,7 +35,7 @@ export const verifications = pgTable("verifications", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
-// Better Auth accounts table (for OAuth - not needed for magic link only, but good to have)
+// Better Auth accounts table
 export const accounts = pgTable("accounts", {
   id: text("id").primaryKey(),
   userId: text("user_id")
@@ -60,7 +60,7 @@ export const subscriptions = pgTable("subscriptions", {
   email: text("email").notNull(),
   polarCustomerId: text("polar_customer_id"),
   polarSubscriptionId: text("polar_subscription_id").unique(),
-  status: text("status").notNull().default("active"), // active, cancelled, past_due
+  status: text("status").notNull().default("active"),
   currentPeriodEnd: timestamp("current_period_end"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),

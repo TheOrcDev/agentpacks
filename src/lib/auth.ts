@@ -1,9 +1,9 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { magicLink } from "better-auth/plugins";
+import { db } from "@/db";
+import * as schema from "@/db/schema";
 import { Resend } from "resend";
-import { db } from "../db";
-import * as schema from "../db/schema";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -18,13 +18,13 @@ export const auth = betterAuth({
     },
   }),
   emailAndPassword: {
-    enabled: false, // Only magic link
+    enabled: false,
   },
   plugins: [
     magicLink({
       sendMagicLink: async ({ email, url }) => {
         await resend.emails.send({
-          from: "AgentPacks <noreply@agentpacks.dev>", // Update with your domain
+          from: "AgentPacks <noreply@agentpacks.dev>",
           to: email,
           subject: "Sign in to AgentPacks",
           html: `
@@ -43,7 +43,9 @@ export const auth = betterAuth({
       },
     }),
   ],
-  trustedOrigins: [process.env.BETTER_AUTH_URL || "http://localhost:3000"],
+  trustedOrigins: [
+    process.env.BETTER_AUTH_URL || "http://localhost:3000",
+  ],
 });
 
 export type Session = typeof auth.$Infer.Session;
