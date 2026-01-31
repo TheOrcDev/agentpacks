@@ -10,7 +10,8 @@ async function handleSubscriptionChange(sub: {
   customerId?: string;
   customer?: { email?: string };
   status: string;
-  currentPeriodEnd?: string;
+  // Polar SDK may provide Date objects here
+  currentPeriodEnd?: string | Date | null;
 }) {
   const email = sub.customer?.email;
   if (!email) {
@@ -26,7 +27,9 @@ async function handleSubscriptionChange(sub: {
 
   const status = sub.status === "active" ? "active" : sub.status;
   const periodEnd = sub.currentPeriodEnd
-    ? new Date(sub.currentPeriodEnd)
+    ? sub.currentPeriodEnd instanceof Date
+      ? sub.currentPeriodEnd
+      : new Date(sub.currentPeriodEnd)
     : null;
 
   if (existing.length > 0) {
