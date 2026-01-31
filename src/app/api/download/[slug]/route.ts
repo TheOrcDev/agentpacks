@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
-import { db, subscriptions, agentPacks } from "@/db";
-import { eq } from "drizzle-orm";
 import * as fs from "node:fs";
 import * as path from "node:path";
+import { eq } from "drizzle-orm";
+import { headers } from "next/headers";
+import { type NextRequest, NextResponse } from "next/server";
+import { agentPacks, db, subscriptions } from "@/db";
+import { auth } from "@/lib/auth";
 
 export async function GET(
   request: NextRequest,
@@ -26,7 +26,10 @@ export async function GET(
     .limit(1);
 
   if (!subscription || subscription.status !== "active") {
-    return NextResponse.json({ error: "No active subscription" }, { status: 403 });
+    return NextResponse.json(
+      { error: "No active subscription" },
+      { status: 403 }
+    );
   }
 
   // Get pack

@@ -1,15 +1,15 @@
-import Link from "next/link";
 import {
-  Zap,
-  Download,
-  Check,
-  Star,
   ArrowRight,
-  Sparkles,
-  Users,
+  Check,
   Code,
+  Download,
   Rocket,
+  Sparkles,
+  Star,
+  Users,
+  Zap,
 } from "lucide-react";
+import Link from "next/link";
 
 const PACKS = [
   {
@@ -69,12 +69,12 @@ export default function Home() {
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent" />
 
         <div className="mx-auto max-w-5xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm text-purple-300">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-purple-300 text-sm">
             <Sparkles className="h-4 w-4" />
             Premium Clawdbot Configurations
           </div>
 
-          <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-7xl">
+          <h1 className="mb-6 font-bold text-5xl tracking-tight sm:text-7xl">
             Pre-built AI Agent Teams
             <br />
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
@@ -90,16 +90,16 @@ export default function Home() {
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
+              className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 font-semibold text-lg text-white transition-all hover:opacity-90"
               href={checkoutUrl}
-              className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 text-lg font-semibold text-white transition-all hover:opacity-90"
             >
               Get All Packs — $19/mo
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <a
-              href="/packs/free-sample.zip"
+              className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800/50 px-8 py-4 font-semibold text-lg text-white transition-all hover:bg-zinc-800"
               download
-              className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800/50 px-8 py-4 text-lg font-semibold text-white transition-all hover:bg-zinc-800"
+              href="/packs/free-sample.zip"
             >
               <Download className="h-5 w-5" />
               Free Sample
@@ -112,7 +112,7 @@ export default function Home() {
       <section className="px-4 py-20" id="packs">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold sm:text-4xl">
+            <h2 className="mb-4 font-bold text-3xl sm:text-4xl">
               Choose Your Team
             </h2>
             <p className="text-zinc-400">
@@ -123,27 +123,29 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-3">
             {PACKS.map((pack) => (
               <div
-                key={pack.name}
                 className="group relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 transition-all hover:border-zinc-700"
+                key={pack.name}
               >
                 <div
                   className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${pack.color}`}
                 />
 
                 <div className="mb-4 text-5xl">{pack.icon}</div>
-                <h3 className="mb-2 text-xl font-bold">{pack.name}</h3>
+                <h3 className="mb-2 font-bold text-xl">{pack.name}</h3>
                 <p className="mb-6 text-sm text-zinc-400">{pack.description}</p>
 
                 <div className="space-y-3">
                   {pack.agents.map((agent) => (
                     <div
-                      key={agent.name}
                       className="flex items-center gap-3 rounded-lg bg-zinc-800/50 px-3 py-2"
+                      key={agent.name}
                     >
                       <span className="text-xl">{agent.emoji}</span>
                       <div>
                         <div className="font-medium">{agent.name}</div>
-                        <div className="text-xs text-zinc-500">{agent.role}</div>
+                        <div className="text-xs text-zinc-500">
+                          {agent.role}
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -155,10 +157,12 @@ export default function Home() {
       </section>
 
       {/* What's Included */}
-      <section className="border-y border-zinc-800 bg-zinc-900/30 px-4 py-20">
+      <section className="border-zinc-800 border-y bg-zinc-900/30 px-4 py-20">
         <div className="mx-auto max-w-4xl">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold">What&apos;s Inside Each Pack</h2>
+            <h2 className="mb-4 font-bold text-3xl">
+              What&apos;s Inside Each Pack
+            </h2>
             <p className="text-zinc-400">
               Everything you need to get your AI team running
             </p>
@@ -198,8 +202,8 @@ export default function Home() {
               },
             ].map((item) => (
               <div
-                key={item.title}
                 className="flex items-start gap-4 rounded-xl border border-zinc-800 bg-zinc-900/50 p-4"
+                key={item.title}
               >
                 <div className="rounded-lg bg-purple-500/10 p-2 text-purple-400">
                   {item.icon}
@@ -219,19 +223,19 @@ export default function Home() {
         <div className="mx-auto max-w-xl">
           <div className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50">
             <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6 text-center">
-              <h2 className="text-2xl font-bold text-white">AgentPacks Pro</h2>
+              <h2 className="font-bold text-2xl text-white">AgentPacks Pro</h2>
               <p className="text-purple-100">All packs, all updates</p>
             </div>
 
             <div className="p-8">
               <div className="mb-6 text-center">
-                <span className="text-5xl font-bold">$19</span>
+                <span className="font-bold text-5xl">$19</span>
                 <span className="text-zinc-400">/month</span>
               </div>
 
               <ul className="mb-8 space-y-3">
                 {FEATURES.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3">
+                  <li className="flex items-center gap-3" key={feature}>
                     <Check className="h-5 w-5 text-green-500" />
                     <span>{feature}</span>
                   </li>
@@ -239,8 +243,8 @@ export default function Home() {
               </ul>
 
               <Link
+                className="block w-full rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 py-4 text-center font-semibold text-lg text-white transition-all hover:opacity-90"
                 href={checkoutUrl}
-                className="block w-full rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 py-4 text-center text-lg font-semibold text-white transition-all hover:opacity-90"
               >
                 Subscribe Now
               </Link>
@@ -254,9 +258,9 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="border-t border-zinc-800 px-4 py-20">
+      <section className="border-zinc-800 border-t px-4 py-20">
         <div className="mx-auto max-w-2xl">
-          <h2 className="mb-12 text-center text-3xl font-bold">FAQ</h2>
+          <h2 className="mb-12 text-center font-bold text-3xl">FAQ</h2>
 
           <div className="space-y-6">
             {[
@@ -278,8 +282,8 @@ export default function Home() {
               },
             ].map((item) => (
               <div
-                key={item.q}
                 className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6"
+                key={item.q}
               >
                 <h3 className="mb-2 font-semibold">{item.q}</h3>
                 <p className="text-zinc-400">{item.a}</p>
@@ -290,15 +294,15 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-zinc-800 px-4 py-8">
+      <footer className="border-zinc-800 border-t px-4 py-8">
         <div className="mx-auto max-w-5xl text-center">
           <p className="text-zinc-500">
             Made with 🧨 by{" "}
             <a
-              href="https://twitter.com/theorcdev"
               className="text-zinc-300 hover:text-white"
-              target="_blank"
+              href="https://twitter.com/theorcdev"
               rel="noopener noreferrer"
+              target="_blank"
             >
               OrcDev
             </a>

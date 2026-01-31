@@ -1,13 +1,16 @@
 import { Webhooks } from "@polar-sh/nextjs";
-import { db, subscriptions } from "@/db";
 import { eq } from "drizzle-orm";
+import { db, subscriptions } from "@/db";
 
 export const POST = Webhooks({
   webhookSecret: process.env.POLAR_WEBHOOK_SECRET!,
   onPayload: async (payload) => {
     console.log("Polar webhook:", payload.type);
 
-    if (payload.type === "subscription.created" || payload.type === "subscription.updated") {
+    if (
+      payload.type === "subscription.created" ||
+      payload.type === "subscription.updated"
+    ) {
       const sub = payload.data;
       const email = sub.customer?.email;
 
@@ -27,7 +30,9 @@ export const POST = Webhooks({
           .update(subscriptions)
           .set({
             status: sub.status === "active" ? "active" : sub.status,
-            currentPeriodEnd: sub.currentPeriodEnd ? new Date(sub.currentPeriodEnd) : null,
+            currentPeriodEnd: sub.currentPeriodEnd
+              ? new Date(sub.currentPeriodEnd)
+              : null,
             updatedAt: new Date(),
           })
           .where(eq(subscriptions.polarSubscriptionId, sub.id));
@@ -37,12 +42,17 @@ export const POST = Webhooks({
           polarCustomerId: sub.customerId,
           polarSubscriptionId: sub.id,
           status: sub.status === "active" ? "active" : sub.status,
-          currentPeriodEnd: sub.currentPeriodEnd ? new Date(sub.currentPeriodEnd) : null,
+          currentPeriodEnd: sub.currentPeriodEnd
+            ? new Date(sub.currentPeriodEnd)
+            : null,
         });
       }
     }
 
-    if (payload.type === "subscription.canceled" || payload.type === "subscription.revoked") {
+    if (
+      payload.type === "subscription.canceled" ||
+      payload.type === "subscription.revoked"
+    ) {
       const sub = payload.data;
       await db
         .update(subscriptions)
