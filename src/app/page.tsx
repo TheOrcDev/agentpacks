@@ -317,6 +317,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why Subscription */}
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-8 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-8 md:grid-cols-2 md:p-10">
+            <div>
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-purple-300 text-sm">
+                <Zap className="h-4 w-4" />
+                Why is this a subscription?
+              </div>
+              <h2 className="mb-4 font-bold text-3xl sm:text-4xl">
+                Because AI changes fast.
+              </h2>
+              <p className="text-zinc-300/90">
+                Today&apos;s “best practice” becomes tomorrow&apos;s broken workflow.
+                Models change. Tools change. Platforms change.
+              </p>
+              <p className="mt-4 text-zinc-400">
+                Imagine you buy an agent pack for $10… and next week half the
+                prompts are deprecated. That&apos;s the worst deal.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {[ 
+                {
+                  title: "Always up to date",
+                  desc: "We continuously refresh agents with the latest patterns and OpenClaw trends.",
+                },
+                {
+                  title: "Track what changed",
+                  desc: "Each update ships with clear notes so you can see what&apos;s new.",
+                },
+                {
+                  title: "You&apos;ll get notified",
+                  desc: "When new packs or major improvements drop, subscribers hear about it first.",
+                },
+              ].map((item) => (
+                <div
+                  className="rounded-2xl border border-zinc-800 bg-zinc-950/40 p-5"
+                  key={item.title}
+                >
+                  <div className="font-semibold text-white">{item.title}</div>
+                  <div className="mt-1 text-sm text-zinc-400">{item.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
       <section className="px-4 py-20" id="pricing">
         <div className="mx-auto max-w-xl">
