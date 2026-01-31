@@ -25,7 +25,7 @@ const PACKS = [
   },
   {
     name: "Dev Team Pack",
-    icon: "⚔️",
+    icon: "💻",
     description: "AI agents for developers and engineering teams",
     agents: [
       { name: "Lead", role: "Engineering Lead", emoji: "🏗️" },
