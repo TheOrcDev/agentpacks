@@ -9,9 +9,9 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import ColorBends from "@/components/color-bends";
+import SiteHeader from "@/components/site-header";
 
 const PACKS = [
   {
@@ -66,29 +66,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen text-white">
-      {/* Header */}
-      <header className="fixed top-0 right-0 left-0 z-50 border-zinc-800/50 border-b bg-zinc-950/80 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <Link className="flex items-center gap-3" href="/">
-            <Image
-              alt="AgentPacks"
-              className="dark:invert"
-              height={32}
-              src="/agent-packs-logo.png"
-              width={32}
-            />
-            <span className="font-bold text-xl">
-              Agent<span className="text-purple-400">Packs</span>
-            </span>
-          </Link>
-          <Link
-            className="rounded-lg border border-zinc-700 px-4 py-2 font-medium text-sm text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white"
-            href="/login"
-          >
-            Sign In
-          </Link>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* Hero */}
       <section className="relative min-h-screen overflow-hidden px-4 pt-32 pb-20 sm:pt-40 sm:pb-32">
