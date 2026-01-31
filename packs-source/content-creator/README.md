@@ -10,6 +10,8 @@ Your AI-powered content creation team for YouTube, TikTok, and beyond.
 
 ## 🚀 Quick Setup
 
+**Note:** In config, use channel names without the leading `#` (e.g. `content-planning`, not `#content-planning`).
+
 ### 1. Copy Agent Files
 Copy the `agents/` folder to your Clawdbot workspace.
 

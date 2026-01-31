@@ -10,6 +10,8 @@ Your AI-powered business team for task management, research, and outreach.
 
 ## 🚀 Quick Setup
 
+**Note:** In config, use channel names without the leading `#` (e.g. `content-planning`, not `#content-planning`).
+
 ### 1. Copy Agent Files
 Copy the `agents/` folder to your Clawdbot workspace.
 
@@ -22,19 +24,19 @@ Add the following to your `agents` array in `clawdbot.json`:
     {
       "id": "chief",
       "name": "Chief",
-      "workspace": "./agents/assistant",
+      "workspace": "./agents/chief",
       "channels": ["assistant"]
     },
     {
       "id": "scout",
       "name": "Scout",
-      "workspace": "./agents/research",
+      "workspace": "./agents/scout",
       "channels": ["research"]
     },
     {
       "id": "reach",
       "name": "Reach",
-      "workspace": "./agents/outreach",
+      "workspace": "./agents/reach",
       "channels": ["outreach"]
     }
   ]

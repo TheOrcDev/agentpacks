@@ -8,6 +8,8 @@ A basic assistant agent to try out AgentPacks.
 
 ## 🚀 Quick Setup
 
+**Note:** In config, use channel names without the leading `#` (e.g. `content-planning`, not `#content-planning`).
+
 ### 1. Copy Agent Files
 Copy the `agents/` folder to your Clawdbot workspace.
 
@@ -33,7 +35,7 @@ clawdbot gateway restart
 ```
 
 ### 4. Start Chatting!
-Message Helper in the #general channel.
+Message Helper in the general channel.
 
 ## 💡 Usage Examples
 

@@ -5,7 +5,7 @@
       "id": "chief",
       "name": "Chief",
       "description": "Personal Assistant & Productivity Partner",
-      "workspace": "./agents/assistant",
+      "workspace": "./agents/chief",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["assistant"],
       "triggers": {
@@ -17,7 +17,7 @@
       "id": "scout",
       "name": "Scout",
       "description": "Research Agent & Market Analyst",
-      "workspace": "./agents/research",
+      "workspace": "./agents/scout",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["research"],
       "triggers": {
@@ -29,7 +29,7 @@
       "id": "reach",
       "name": "Reach",
       "description": "Outreach Agent & Relationship Builder",
-      "workspace": "./agents/outreach",
+      "workspace": "./agents/reach",
       "model": "anthropic/claude-sonnet-4-20250514",
       "channels": ["outreach"],
       "triggers": {

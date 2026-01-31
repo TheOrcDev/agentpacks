@@ -39,6 +39,8 @@ Docs turns your code into understandable documentation. They write READMEs, API 
 
 ## 🔧 Setup
 
+**Note:** Channels are shown like `#channel` for readability, but in config they are plain names (no `#`).
+
 1. Copy each agent's folder to your Clawdbot workspace
 2. Add agent configs to your `clawdbot.json`
 3. Restart the gateway
