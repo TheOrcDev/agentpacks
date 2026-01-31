@@ -82,7 +82,7 @@ export default function Home() {
             </span>
           </Link>
           <Link
-            className="rounded-lg border border-zinc-700 bg-zinc-800/50 px-4 py-2 font-medium text-sm text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white"
+            className="rounded-lg border border-zinc-700 px-4 py-2 font-medium text-sm text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white"
             href="/login"
           >
             Sign In
@@ -95,7 +95,7 @@ export default function Home() {
         {/* Background */}
         <div className="absolute inset-0 -z-10">
           {/* Color Bends (ReactBits) */}
-          <div className="absolute inset-0 opacity-70">
+          <div className="absolute inset-0">
             <ColorBends
               autoRotate={0}
               colors={["#a855f7", "#ec4899", "#22d3ee"]}
@@ -110,13 +110,11 @@ export default function Home() {
               warpStrength={1}
             />
           </div>
-          {/* Darken for readability */}
-          <div className="absolute inset-0 bg-zinc-950/75" />
           {/* Extra top glow */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/25 via-transparent to-transparent" />
         </div>
 
-        <div className="mx-auto max-w-5xl text-center">
+        <div className="w-full text-center">
           {/* Readability card */}
           <div className="mx-auto max-w-4xl rounded-3xl border border-zinc-800/60 bg-zinc-950/60 px-6 py-10 shadow-2xl shadow-black/50 backdrop-blur-md sm:px-10 sm:py-14">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-500/15 px-4 py-2 text-purple-200 text-sm">
@@ -124,7 +122,7 @@ export default function Home() {
               Premium Clawdbot Configurations
             </div>
 
-            <h1 className="mb-6 font-bold text-5xl tracking-tight text-white sm:text-7xl">
+            <h1 className="mb-6 font-bold text-5xl text-white tracking-tight sm:text-7xl">
               Pre-built AI Agent Teams
               <br />
               <span className="bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
@@ -134,8 +132,8 @@ export default function Home() {
 
             <p className="mx-auto mb-10 max-w-2xl text-xl text-zinc-200/90">
               Stop configuring. Start building. Get professionally crafted agent
-              configurations for Clawdbot — install in minutes, customize to your
-              needs.
+              configurations for Clawdbot — install in minutes, customize to
+              your needs.
             </p>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
