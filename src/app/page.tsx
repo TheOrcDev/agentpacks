@@ -288,6 +288,14 @@ export default function Home() {
                 a: "Download the ZIP, extract to your Clawdbot workspace, merge the config into your clawdbot.json, and restart the gateway. Takes about 2 minutes.",
               },
               {
+                q: "Are agents updated?",
+                a: "Yes! All agents are continuously updated with the latest OpenClaw trends and best practices. You'll always have access to the most current configurations.",
+              },
+              {
+                q: "Will there be more packs?",
+                a: "Absolutely! New agent teams are added regularly. As a subscriber, you get instant access to all new packs as they're released.",
+              },
+              {
                 q: "Can I customize the agents?",
                 a: "Absolutely! The SOUL.md files are yours to modify. Tweak personalities, add domain knowledge, adjust communication styles.",
               },
