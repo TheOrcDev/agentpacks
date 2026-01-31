@@ -3,7 +3,8 @@ import { AlertCircle, Calendar, Download, Package } from "lucide-react";
 import { headers } from "next/headers";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { agentPacks, db, subscriptions } from "@/db";
+import { db } from "@/db";
+import { agentPacks, subscriptions } from "@/db/schema";
 import { auth } from "@/lib/auth";
 import { SignOutButton } from "./sign-out-button";
 
@@ -110,6 +111,7 @@ export default async function PortalPage() {
                   <button
                     className="flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-lg bg-zinc-800 py-2 font-semibold text-sm text-zinc-500"
                     disabled
+                    type="button"
                   >
                     <Download className="h-4 w-4" />
                     Subscribe to Download

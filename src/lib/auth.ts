@@ -3,7 +3,7 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { magicLink } from "better-auth/plugins";
 import { Resend } from "resend";
 import { db } from "@/db";
-import * as schema from "@/db/schema";
+import { accounts, sessions, users, verifications } from "@/db/schema";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -11,10 +11,10 @@ export const auth = betterAuth({
   database: drizzleAdapter(db, {
     provider: "pg",
     schema: {
-      user: schema.users,
-      session: schema.sessions,
-      verification: schema.verifications,
-      account: schema.accounts,
+      user: users,
+      session: sessions,
+      verification: verifications,
+      account: accounts,
     },
   }),
   emailAndPassword: {
@@ -23,9 +23,10 @@ export const auth = betterAuth({
   plugins: [
     magicLink({
       sendMagicLink: async ({ email, url }) => {
-        const senderName = process.env.EMAIL_SENDER_NAME || "AgentPacks";
-        const senderAddress = process.env.EMAIL_SENDER_ADDRESS || "noreply@orcdev.com";
-        
+        const senderName = process.env.EMAIL_SENDER_NAME ?? "AgentPacks";
+        const senderAddress =
+          process.env.EMAIL_SENDER_ADDRESS ?? "noreply@orcdev.com";
+
         const { error } = await resend.emails.send({
           from: `${senderName} <${senderAddress}>`,
           to: email,
@@ -43,7 +44,7 @@ export const auth = betterAuth({
             </div>
           `,
         });
-        
+
         if (error) {
           console.error("Failed to send magic link email:", error);
           throw new Error("Failed to send magic link email");
@@ -51,7 +52,7 @@ export const auth = betterAuth({
       },
     }),
   ],
-  trustedOrigins: [process.env.BETTER_AUTH_URL || "http://localhost:3000"],
+  trustedOrigins: [process.env.BETTER_AUTH_URL ?? "http://localhost:3000"],
 });
 
 export type Session = typeof auth.$Infer.Session;

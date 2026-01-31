@@ -2,7 +2,6 @@
 
 import { ArrowLeft, CheckCircle, Loader2, Mail } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 
@@ -11,7 +10,6 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,6 +47,7 @@ export default function LoginPage() {
           <button
             className="mt-6 text-purple-400 text-sm hover:text-purple-300"
             onClick={() => setSent(false)}
+            type="button"
           >
             Use a different email
           </button>

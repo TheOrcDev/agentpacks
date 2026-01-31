@@ -1,13 +1,14 @@
-import * as fs from "node:fs";
-import * as path from "node:path";
+import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { eq } from "drizzle-orm";
 import { headers } from "next/headers";
-import { type NextRequest, NextResponse } from "next/server";
-import { agentPacks, db, subscriptions } from "@/db";
+import { NextResponse } from "next/server";
+import { db } from "@/db";
+import { agentPacks, subscriptions } from "@/db/schema";
 import { auth } from "@/lib/auth";
 
 export async function GET(
-  request: NextRequest,
+  _request: Request,
   { params }: { params: Promise<{ slug: string }> }
 ) {
   const { slug } = await params;
@@ -44,13 +45,13 @@ export async function GET(
   }
 
   // Read file
-  const filePath = path.resolve(pack.filePath);
-  if (!fs.existsSync(filePath)) {
+  const filePath = resolve(pack.filePath);
+  if (!existsSync(filePath)) {
     console.error(`Pack file not found: ${filePath}`);
     return NextResponse.json({ error: "File not found" }, { status: 404 });
   }
 
-  const file = fs.readFileSync(filePath);
+  const file = readFileSync(filePath);
   const filename = `${pack.slug}-v${pack.version}.zip`;
 
   return new NextResponse(file, {

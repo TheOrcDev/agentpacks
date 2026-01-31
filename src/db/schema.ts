@@ -78,3 +78,12 @@ export const agentPacks = pgTable("agent_packs", {
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
+
+export const schema = {
+  accounts,
+  agentPacks,
+  sessions,
+  subscriptions,
+  users,
+  verifications,
+};
