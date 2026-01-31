@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 const MAX_COLORS = 8;
@@ -110,14 +110,14 @@ function hexToVec3(hex: string) {
   const rgb =
     h.length === 3
       ? [
-          parseInt(h[0] + h[0], 16),
-          parseInt(h[1] + h[1], 16),
-          parseInt(h[2] + h[2], 16),
+          Number.parseInt(h[0] + h[0], 16),
+          Number.parseInt(h[1] + h[1], 16),
+          Number.parseInt(h[2] + h[2], 16),
         ]
       : [
-          parseInt(h.slice(0, 2), 16),
-          parseInt(h.slice(2, 4), 16),
-          parseInt(h.slice(4, 6), 16),
+          Number.parseInt(h.slice(0, 2), 16),
+          Number.parseInt(h.slice(2, 4), 16),
+          Number.parseInt(h.slice(4, 6), 16),
         ];
 
   return new THREE.Vector3(rgb[0] / 255, rgb[1] / 255, rgb[2] / 255);
@@ -174,7 +174,10 @@ export default function ColorBends({
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
     const geometry = new THREE.PlaneGeometry(2, 2);
-    const uColorsArray = Array.from({ length: MAX_COLORS }, () => new THREE.Vector3(0, 0, 0));
+    const uColorsArray = Array.from(
+      { length: MAX_COLORS },
+      () => new THREE.Vector3(0, 0, 0)
+    );
 
     const material = new THREE.ShaderMaterial({
       vertexShader: vert,
@@ -213,7 +216,7 @@ export default function ColorBends({
     rendererRef.current = renderer;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setClearColor(0x000000, transparent ? 0 : 1);
+    renderer.setClearColor(0x00_00_00, transparent ? 0 : 1);
 
     renderer.domElement.style.width = "100%";
     renderer.domElement.style.height = "100%";
@@ -268,7 +271,11 @@ export default function ColorBends({
     return () => {
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
       if (resizeObserverRef.current) resizeObserverRef.current.disconnect();
-      else (globalThis as unknown as Window).removeEventListener("resize", handleResize);
+      else
+        (globalThis as unknown as Window).removeEventListener(
+          "resize",
+          handleResize
+        );
 
       geometry.dispose();
       material.dispose();
@@ -310,7 +317,7 @@ export default function ColorBends({
 
     material.uniforms.uColorCount.value = arr.length;
     material.uniforms.uTransparent.value = transparent ? 1 : 0;
-    if (renderer) renderer.setClearColor(0x000000, transparent ? 0 : 1);
+    if (renderer) renderer.setClearColor(0x00_00_00, transparent ? 0 : 1);
   }, [
     rotation,
     autoRotate,
@@ -337,7 +344,8 @@ export default function ColorBends({
     };
 
     container.addEventListener("pointermove", handlePointerMove);
-    return () => container.removeEventListener("pointermove", handlePointerMove);
+    return () =>
+      container.removeEventListener("pointermove", handlePointerMove);
   }, []);
 
   return (
