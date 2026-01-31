@@ -296,14 +296,14 @@ export default function Home() {
                   </div>
                   <p className="text-sm text-zinc-400">{step.desc}</p>
                 </div>,
-                !isLast ? (
+                isLast ? null : (
                   <div
                     className="hidden items-center justify-center text-zinc-600 md:flex"
                     key={`${step.title}-arrow`}
                   >
                     <ArrowRight className="h-5 w-5" />
                   </div>
-                ) : null,
+                ),
               ];
             })}
           </div>
@@ -330,8 +330,8 @@ export default function Home() {
                 Because AI changes fast.
               </h2>
               <p className="text-zinc-300/90">
-                Today&apos;s “best practice” becomes tomorrow&apos;s broken workflow.
-                Models change. Tools change. Platforms change.
+                Today&apos;s “best practice” becomes tomorrow&apos;s broken
+                workflow. Models change. Tools change. Platforms change.
               </p>
               <p className="mt-4 text-zinc-400">
                 Imagine you buy an agent pack for $10… and next week half the
@@ -340,7 +340,7 @@ export default function Home() {
             </div>
 
             <div className="space-y-4">
-              {[ 
+              {[
                 {
                   title: "Always up to date",
                   desc: "We continuously refresh agents with the latest patterns and OpenClaw trends.",
@@ -350,7 +350,7 @@ export default function Home() {
                   desc: "Each update ships with clear notes so you can see what&apos;s new.",
                 },
                 {
-                  title: "You&apos;ll get notified",
+                  title: "You'll get notified",
                   desc: "When new packs or major improvements drop, subscribers hear about it first.",
                 },
               ].map((item) => (
