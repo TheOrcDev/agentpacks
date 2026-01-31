@@ -65,7 +65,7 @@ export default function Home() {
   const checkoutUrl = `/api/checkout?products=${AGENTPACKS_PRODUCT_ID}`;
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen text-white">
       {/* Header */}
       <header className="fixed top-0 right-0 left-0 z-50 border-zinc-800/50 border-b bg-zinc-950/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
@@ -91,7 +91,7 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="relative overflow-hidden px-4 pt-32 pb-20 sm:pt-40 sm:pb-32">
+      <section className="relative min-h-screen overflow-hidden px-4 pt-32 pb-20 sm:pt-40 sm:pb-32">
         {/* Background */}
         <div className="absolute inset-0 -z-10">
           {/* Color Bends (ReactBits) */}
@@ -111,7 +111,7 @@ export default function Home() {
             />
           </div>
           {/* Darken for readability */}
-          <div className="absolute inset-0 bg-zinc-950/60" />
+          <div className="absolute inset-0" />
           {/* Extra top glow */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/25 via-transparent to-transparent" />
         </div>
