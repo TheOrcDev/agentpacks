@@ -1,8 +1,10 @@
 import {
+  ArrowDown,
   ArrowRight,
   Check,
   Code,
   Download,
+  FolderOpen,
   Rocket,
   Sparkles,
   Star,
@@ -241,6 +243,76 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Setup Story */}
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 font-bold text-3xl sm:text-4xl">
+              Deploy Your Team in Minutes
+            </h2>
+            <p className="text-zinc-400">
+              No long setup. Just drop it in and start shipping.
+            </p>
+          </div>
+
+          <div className="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr]">
+            {[
+              {
+                icon: <Download className="h-6 w-6" />,
+                title: "Grab the ZIP",
+                desc: "Download your pack from the portal.",
+              },
+              {
+                icon: <FolderOpen className="h-6 w-6" />,
+                title: "Drop it in",
+                desc: "Extract into your Clawdbot workspace.",
+              },
+              {
+                icon: <Zap className="h-6 w-6" />,
+                title: "Wire the config",
+                desc: "Merge the JSON config and map channels.",
+              },
+              {
+                icon: <Rocket className="h-6 w-6" />,
+                title: "Summon & ship",
+                desc: "Start chatting. Iterate as you go.",
+              },
+            ].flatMap((step, i, arr) => {
+              const isLast = i === arr.length - 1;
+              return [
+                <div
+                  className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6"
+                  key={step.title}
+                >
+                  <div className="mb-3 inline-flex items-center gap-3">
+                    <div className="rounded-xl bg-purple-500/10 p-2 text-purple-400">
+                      {step.icon}
+                    </div>
+                    <div className="font-bold text-lg">{step.title}</div>
+                  </div>
+                  <p className="text-sm text-zinc-400">{step.desc}</p>
+                </div>,
+                !isLast ? (
+                  <div
+                    className="hidden items-center justify-center text-zinc-600 md:flex"
+                    key={`${step.title}-arrow`}
+                  >
+                    <ArrowRight className="h-5 w-5" />
+                  </div>
+                ) : null,
+              ];
+            })}
+          </div>
+
+          <div className="mt-6 flex flex-col gap-2 text-center text-sm text-zinc-500 md:hidden">
+            <div className="flex items-center justify-center gap-2">
+              <ArrowDown className="h-4 w-4" />
+              <span>Follow the steps top to bottom on mobile</span>
+            </div>
           </div>
         </div>
       </section>
