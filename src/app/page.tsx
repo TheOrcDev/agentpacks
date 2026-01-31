@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ColorBends from "@/components/color-bends";
 
 const PACKS = [
   {
@@ -91,7 +92,30 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative overflow-hidden px-4 pt-32 pb-20 sm:pt-40 sm:pb-32">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent" />
+        {/* Background */}
+        <div className="absolute inset-0 -z-10">
+          {/* Color Bends (ReactBits) */}
+          <div className="absolute inset-0 opacity-70">
+            {/* @ts-expect-error client component */}
+            <ColorBends
+              autoRotate={0}
+              colors={["#a855f7", "#ec4899", "#22d3ee"]}
+              frequency={1}
+              mouseInfluence={1}
+              noise={0.08}
+              parallax={0.5}
+              rotation={0}
+              scale={1}
+              speed={0.2}
+              transparent
+              warpStrength={1}
+            />
+          </div>
+          {/* Darken for readability */}
+          <div className="absolute inset-0 bg-zinc-950/60" />
+          {/* Extra top glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/25 via-transparent to-transparent" />
+        </div>
 
         <div className="mx-auto max-w-5xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-purple-300 text-sm">
