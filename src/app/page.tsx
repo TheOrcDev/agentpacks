@@ -64,8 +64,23 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+          <Link href="/" className="text-xl font-bold">
+            Agent<span className="text-purple-400">Packs</span>
+          </Link>
+          <Link
+            href="/login"
+            className="rounded-lg border border-zinc-700 bg-zinc-800/50 px-4 py-2 text-sm font-medium text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white"
+          >
+            Sign In
+          </Link>
+        </div>
+      </header>
+
       {/* Hero */}
-      <section className="relative overflow-hidden px-4 py-20 sm:py-32">
+      <section className="relative overflow-hidden px-4 pt-32 pb-20 sm:pt-40 sm:pb-32">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent" />
 
         <div className="mx-auto max-w-5xl text-center">
