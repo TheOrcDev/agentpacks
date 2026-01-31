@@ -9,6 +9,7 @@ import {
   Users,
   Zap,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const PACKS = [
@@ -68,10 +69,12 @@ export default function Home() {
       <header className="fixed top-0 right-0 left-0 z-50 border-zinc-800/50 border-b bg-zinc-950/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <Link className="flex items-center gap-3" href="/">
-            <img
+            <Image
               alt="AgentPacks"
-              className="h-8 w-8"
+              className="dark:invert"
+              height={32}
               src="/agent-packs-logo.png"
+              width={32}
             />
             <span className="font-bold text-xl">
               Agent<span className="text-purple-400">Packs</span>
