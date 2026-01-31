@@ -308,10 +308,22 @@ export default function Home() {
             })}
           </div>
 
-          <div className="mt-6 flex flex-col gap-2 text-center text-sm text-zinc-500 md:hidden">
-            <div className="flex items-center justify-center gap-2">
+          <div className="mt-6 flex flex-col gap-2 text-center text-sm text-zinc-500">
+            <div className="flex items-center justify-center gap-2 md:hidden">
               <ArrowDown className="h-4 w-4" />
               <span>Follow the steps top to bottom on mobile</span>
+            </div>
+
+            <div>
+              New to OpenClaw? Start here: {" "}
+              <a
+                className="text-purple-300 underline-offset-4 hover:underline"
+                href="https://docs.openclaw.ai/start/getting-started"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                docs.openclaw.ai
+              </a>
             </div>
           </div>
         </div>
