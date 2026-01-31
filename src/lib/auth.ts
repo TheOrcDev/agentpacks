@@ -23,8 +23,11 @@ export const auth = betterAuth({
   plugins: [
     magicLink({
       sendMagicLink: async ({ email, url }) => {
-        await resend.emails.send({
-          from: "AgentPacks <noreply@agentpacks.dev>",
+        const senderName = process.env.EMAIL_SENDER_NAME || "AgentPacks";
+        const senderAddress = process.env.EMAIL_SENDER_ADDRESS || "noreply@orcdev.com";
+        
+        const { error } = await resend.emails.send({
+          from: `${senderName} <${senderAddress}>`,
           to: email,
           subject: "Sign in to AgentPacks",
           html: `
@@ -40,6 +43,11 @@ export const auth = betterAuth({
             </div>
           `,
         });
+        
+        if (error) {
+          console.error("Failed to send magic link email:", error);
+          throw new Error("Failed to send magic link email");
+        }
       },
     }),
   ],
