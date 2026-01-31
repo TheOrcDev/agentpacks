@@ -111,47 +111,50 @@ export default function Home() {
             />
           </div>
           {/* Darken for readability */}
-          <div className="absolute inset-0" />
+          <div className="absolute inset-0 bg-zinc-950/75" />
           {/* Extra top glow */}
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/25 via-transparent to-transparent" />
         </div>
 
         <div className="mx-auto max-w-5xl text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-purple-300 text-sm">
-            <Sparkles className="h-4 w-4" />
-            Premium Clawdbot Configurations
-          </div>
+          {/* Readability card */}
+          <div className="mx-auto max-w-4xl rounded-3xl border border-zinc-800/60 bg-zinc-950/60 px-6 py-10 shadow-2xl shadow-black/50 backdrop-blur-md sm:px-10 sm:py-14">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-500/15 px-4 py-2 text-purple-200 text-sm">
+              <Sparkles className="h-4 w-4" />
+              Premium Clawdbot Configurations
+            </div>
 
-          <h1 className="mb-6 font-bold text-5xl tracking-tight sm:text-7xl">
-            Pre-built AI Agent Teams
-            <br />
-            <span className="bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Ready to Deploy
-            </span>
-          </h1>
+            <h1 className="mb-6 font-bold text-5xl tracking-tight text-white sm:text-7xl">
+              Pre-built AI Agent Teams
+              <br />
+              <span className="bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
+                Ready to Deploy
+              </span>
+            </h1>
 
-          <p className="mx-auto mb-10 max-w-2xl text-xl text-zinc-400">
-            Stop configuring. Start building. Get professionally crafted agent
-            configurations for Clawdbot — install in minutes, customize to your
-            needs.
-          </p>
+            <p className="mx-auto mb-10 max-w-2xl text-xl text-zinc-200/90">
+              Stop configuring. Start building. Get professionally crafted agent
+              configurations for Clawdbot — install in minutes, customize to your
+              needs.
+            </p>
 
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link
-              className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 font-semibold text-lg text-white transition-all hover:opacity-90"
-              href={checkoutUrl}
-            >
-              Get All Packs — $19/mo
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <a
-              className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-800/50 px-8 py-4 font-semibold text-lg text-white transition-all hover:bg-zinc-800"
-              download
-              href="/packs/free-sample.zip"
-            >
-              <Download className="h-5 w-5" />
-              Free Sample
-            </a>
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link
+                className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 px-8 py-4 font-semibold text-lg text-white transition-all hover:opacity-90"
+                href={checkoutUrl}
+              >
+                Get All Packs — $19/mo
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <a
+                className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900/60 px-8 py-4 font-semibold text-lg text-white transition-all hover:bg-zinc-800"
+                download
+                href="/packs/free-sample.zip"
+              >
+                <Download className="h-5 w-5" />
+                Free Sample
+              </a>
+            </div>
           </div>
         </div>
       </section>
