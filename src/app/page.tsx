@@ -297,7 +297,7 @@ export default function Home() {
       <footer className="border-zinc-800 border-t px-4 py-8">
         <div className="mx-auto max-w-5xl text-center">
           <p className="text-zinc-500">
-            Made with 🧨 by{" "}
+            Made with 🪓 by{" "}
             <a
               className="text-zinc-300 hover:text-white"
               href="https://twitter.com/theorcdev"
