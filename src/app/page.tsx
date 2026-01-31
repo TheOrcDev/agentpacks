@@ -57,7 +57,7 @@ const FEATURES = [
 ];
 
 // Hardcoded product ID for AgentPacks subscription
-const AGENTPACKS_PRODUCT_ID = "8e9adfb5-0d6d-4b8d-bd87-9cccccd0f5bb";
+const AGENTPACKS_PRODUCT_ID = process.env.POLAR_PRODUCT_ID;
 
 export default function Home() {
   const checkoutUrl = `/api/checkout?products=${AGENTPACKS_PRODUCT_ID}`;
@@ -65,14 +65,14 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-zinc-950 text-white">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-sm">
+      <header className="fixed top-0 right-0 left-0 z-50 border-zinc-800/50 border-b bg-zinc-950/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-          <Link href="/" className="text-xl font-bold">
+          <Link className="font-bold text-xl" href="/">
             Agent<span className="text-purple-400">Packs</span>
           </Link>
           <Link
+            className="rounded-lg border border-zinc-700 bg-zinc-800/50 px-4 py-2 font-medium text-sm text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white"
             href="/login"
-            className="rounded-lg border border-zinc-700 bg-zinc-800/50 px-4 py-2 text-sm font-medium text-zinc-300 transition-all hover:bg-zinc-800 hover:text-white"
           >
             Sign In
           </Link>
